@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dạy lập trình </title>
+	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='all.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='all.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='flexslider')}}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='lightbox.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='jquery.rateyo.all.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='owl.theme.default.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='owl.carousel.css')}}"/>
+	<!-- <link rel="stylesheet" type="text/css" href="css/jquery.mmenu.all.css" /> -->
+	<!-- <link rel="stylesheet" type="text/css" href="css/meanmenu.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='inner-page-style.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700" rel="stylesheet">
+</head>
+<body>
+	<div id="page" class="site" itemscope itemtype="http://schema.org/LocalBusiness">
+		<header class="site-header">
+			<div class="top-header">
+				<div class="container">
+					<div class="top-header-left">
+						<div class="top-header-block">
+							<a href="mailto:info@educationpro.com" itemprop="email"><i class="fas fa-envelope"></i> info@educationpro.com</a>
+						</div>
+						<div class="top-header-block">
+							<a href="tel:0383067320" itemprop="telephone"><i class="fas fa-phone"></i> +84 0383067320</a>
+						</div>
+					</div>
+					<div class="top-header-right">
+						<div class="social-block">
+							<ul class="social-list">
+								
+								<li><a href="mailto:ask@hoasen.edu.vn"><i class="fab fa-google-plus-g"></i></a></li>
+								<li><a href="https://www.facebook.com/iiehsu"><i class="fab fa-facebook-square"></i></a></li>
+								<li><a href="https://www.facebook.com/iiehsu"><i class="fab fa-facebook-messenger"></i></a></li>
+								
+							</ul>
+						</div>
+						<div class="login-block">
+							<div class="b1">
+								<a href="/login">Đăng nhập</a>
+								
+							</div>
+							<div class="b2">
+								<!-- <p style="color:white ;">Đã đăng nhập</p> -->
+							</div>
+							
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			<!-- Top header Close -->
+			<div class="main-header">
+				<div class="container">
+					<div class="logo-wrap" itemprop="logo">
+						<img src="/static/images/site-logo.jpg" alt="Logo Image">
+						<!-- <h1>Education</h1> -->
+					</div>
+					<div class="nav-wrap">
+						<nav class="nav-desktop">
+							<ul class="menu-list">
+								<li><a href="/">Trang Chính</a></li>
+								<li><a href="/event">Sự Kiện </a>
+									<!-- <ul class="sub-menu"></ul> -->
+								</li>
+								<li ><a href="/courselisting">Khoá Học Ngắn Hạn </a></li>
+								<li><a href="/gallery2">Lịch khai giảng</a></li>
+								<li><a href="/contact">Liên Hệ</a></li>
+							</ul>
+						</nav>
+						<div id="bar">
+							<i class="fas fa-bars"></i>
+						</div>
+						<div id="close">
+							<i class="fas fa-times"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- Header Close -->
+		<div class="banner">
+			<div class="owl-four owl-carousel" itemprop="image">
+				<img src="/static/slider/slider-1.png" alt="Image of Bannner">
+				<img src="/static/slider/slider-2.png" alt="Image of Bannner">
+				<img src="/static/slider/slider-3.png" alt="Image of Bannner">
+			</div>
+			<!-- <div class="container" itemprop="description">
+				<h1>Chào mừng bạn đến với Website dạy lập trình  </h1>
+				<h3>WebSite của chúng tôi sẽ giúp bạn hiểu hơn về công nghê là gì </h3>
+			</div> -->
+			 <div id="owl-four-nav" class="owl-nav"></div>
+		</div>
+		<div class="page-heading">
+			<div class="container">
+				<h2>CHƯƠNG TRÌNH </h2>
+			</div>
+		</div>
+		<!-- Popular courses End -->
+		<div class="learn-courses">
+			<div class="container">
+				<div class="courses">
+					<div class="owl-one owl-carousel">
+						<div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Course">
+							<div class="img-wrap" itemprop="image"><img src="/static/images/Banner wwebsite_1800x700.jpg" alt="courses picture"></div>
+								<a href="//courselisting" class="learn-desining-banner" itemprop="name">KHOÁ HỌC NGẮN HẠN  </a>
+							<div class="box-body" itemprop="description">
+								<p>Chuyên đề này cung cấp cho bạn nền tảng cơ bản về ngôn ngữ lập trình cơ bản </p>
+								<section itemprop="time">
+									<p><span>Thời gian  :</span> 3-6 Tháng</p>
+									<p><span>Lớp học :</span> 7am-10am / 6am-9pm</p>
+									<p><span>Học phí :</span> 3,500,000</p>
+								</section>
+							</div>
+						</div>
+
+						<div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Course">
+							<div class="img-wrap"  itemprop="image"><img src="/static/images/tranning.jpg" alt="courses picture"></div>
+								<a href="/course-single.html" class="learn-desining-banner" itemprop="name">Đào tạo doanh nghiệp </a>
+							<div class="box-body" itemprop="description">
+								<p>Chương trình được thiết kế chuyên biệt phù hợp với nhu cầu tìm kiếm của các doanh nghiệp trong và ngoài nước với ngôn ngữ và xu hướng hiện đại của các công ty.</p>
+								
+							</div>
+						</div>
+
+						<div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Course">
+							<div class="img-wrap"  itemprop="image"><img src="/static/images/english.jpg" alt="courses picture"></div>
+								<a href="/course-single.html" class="learn-desining-banner" itemprop="name">CHƯƠNG TRÌNH TIẾNG ANH</a>
+							<div class="box-body" itemprop="description">
+								<p>Khóa học này cung cấp cho bạn chương trình tiếng Anh chuẩn IELTS giúp bạn chinh phục các kỳ thi</p>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Learn courses End -->
+		<section class="whyUs-section">
+			<div class="container">
+				<div class="featured-points">
+					<h1>Tin Tức & Sự Kiện</h1>
+					<!-- Div for contain all cards inside -->
+					<div class="block_all_event_card">
+						<!-- Card event example -->
+						<div class="card_event">
+							<!-- Image card -->
+							<div class="image_card_event">
+								<img 
+									src="/static/images/workshop.png"
+									style="height:250px" 
+									
+								/>
+							</div>
+							<!-- End image -->
+
+							<!-- Content of card -->
+							<div class="content_card_event">
+								<a href="/courselisting" class="learn-desining-banner" itemprop="name">làm việc trực tuyến với đội ngũ chuyên gia
+									những người được đào tạo và có chứng chỉ quốc tế</a>
+							</div>
+							<!-- End content -->
+						</div>
+						<!-- End card -->
+
+						<!-- Card event example -->
+						<div class="card_event">
+							<!-- Image card -->
+							<div class="image_card_event">
+								<img 
+									src="/static/images/khoahoc.jpg"
+									
+									style="height:250px" 
+								/>
+							</div>
+							<!-- End image -->
+
+							<!-- Content of card -->
+							<div class="content_card_event">
+								<a href="/courselisting" class="learn-desining-banner" itemprop="name">Khóa học đầu tiên của trang web
+									tại cơ sở Hồ Chí Minh</a>
+							</div>
+							<!-- End content -->
+						</div>
+						<!-- End card -->
+
+						<!-- Card event example -->
+						<div class="card_event">
+							<!-- Image card -->
+							<div class="image_card_event">
+								<img 
+									src="http://media.vietq.vn/files/vietq/quangtuan/Dao_tao_theo_nhu_cau.jpg"
+									style="height:250px" 
+								/>
+							</div>
+							<!-- End image -->
+
+							<!-- Content of card -->
+							<div class="content_card_event">
+								<a href="/courselisting" class="learn-desining-banner" itemprop="name">Mở WebSite của riêng bạn
+									lớp đào tạo quản lý</a>
+							</div>
+							<!-- End content -->
+						</div>
+						<!-- End card -->
+						<!-- Card event example -->
+						<div class="card_event">
+							<!-- Image card -->
+							<div class="image_card_event">
+								<img 
+									src="http://media.vietq.vn/files/vietq/quangtuan/Dao_tao_theo_nhu_cau.jpg"
+									style="height:250px" 
+								/>
+							</div>
+							<!-- End image -->
+
+							<!-- Content of card -->
+							<div class="content_card_event">
+								<a href="/courselisting" class="learn-desining-banner" itemprop="name">LỚP KIỂM THỬ PHẦN MỀM</a>
+							</div>
+							<!-- End content -->
+						</div>
+						<!-- End card -->
+				</div>
+				<div class="whyus-wrap">
+					
+				</div>
+			</div>
+		</section>
+		
+		<!-- End of gallery /static/images -->
+		<section class="page-heading">
+			<div class="container">
+				<h2>Sự kiện sắp tới </i></h2>
+			</div>
+		</section>
+		<section class="events-section" itemprop="event" itemscope itemtype=" ">
+			<div class="container">
+				<div class="event-wrap">
+					<div class="img-wrap" itemprop="image">
+						<img src="/static/images/frontend.png" alt="event /static/images">
+					</div>
+					<div class="details">
+						<a href="/courselisting"><h3 itemprop="name">Khai giảng lớp Front End</h3></a>
+						<p itemprop="description">Lớp học này sẽ cung cấp đầy đủ kiến thức để trở thành một Frontend DEV chuyên nghiệp</p>
+
+						<h5 itemprop="startDate"><i class="far fa-clock"></i> May 28,2022 | 11am</h5>
+						<h5 itemprop="location"><i class="fas fa-map-marker-alt"></i> Rex Hotel, Hồ Chí Minh</h5>
+					</div>
+				</div>
+
+				<div class="event-wrap">
+					<div class="img-wrap" itemprop="image">
+						<img src="/static/images/backend.png" alt="event /static/images">
+					</div>
+					<div class="details">
+						<a href="/courselisting"><h3 itemprop="name">Khai giảng lớp Backend  </h3></a>
+						<p itemprop="description">Mở lớp phụ trợ Lớp này sẽ cung cấp đầy đủ kiến thức để trở thành một Backend DEV chuyên nghiệp</p>
+
+						<h5 itemprop="startDate"><i class="far fa-clock"></i> May 30,2022 | 11am</h5>
+						<h5 itemprop="location"><i class="fas fa-map-marker-alt"></i> Rex Hotel, Hồ Chí Minh</h5>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End of Events section -->
+	
+		<!-- <section class="query-section">
+			<div class="container">
+				<p>Đặt liên hệ? Hỏi chúng tôi qua số điện thoại<a href="tel:+84 0383067320"><i class="fas fa-phone"></i> +84 0383067320</a></p>
+			</div>
+		</section> -->
+		<!-- End of Query Section -->
+		<footer class="page-footer" itemprop="footer" itemscope itemtype="http://schema.org/WPFooter">
+			<div class="footer-first-section">
+				<div class="container">
+					<div class="box-wrap" itemprop="about">
+						<header>
+							<h1>Về WebSite</h1>
+						</header>
+						<p>WebSite của chúng tôi cung cấp các khoá học đúng tiêu chuẩn cũng như đúng nhu cầu của các doanh nghiệp trong và ngoài nước cần.</p>
+
+						<h4><a href="tel:+84 0383067320"><i class="fas fa-phone"></i> +84 0383067320</a></h4>
+						<h4><a href="mailto:info@educationpro.com"><i class="fas fa-envelope"></i> info@educationpro.com</a></h4>
+						<h4><i class="fas fa-map-marker-alt"></i>Số 8 Nguyễn Văn Tráng, Hồ Chí Minh</h4>
+						<!-- <iFrame src="https://map.coccoc.com/map/291898860264544?borders=20.905111944444002%2C105.70787972222%2C21.112853888889%2C105.93691972222&query=s%E1%BB%91+8+nguy%E1%BB%85n+v%C4%83n+tr%C3%A1ng" width="680" height="480" >Nguyễn Văn Tráng, Hồ Chí Minh </iFrame> -->
+					</div>
+	
+					<div class="box-wrap">
+						<header>
+							<h1>Lớp học dự kiến </h1>
+						</header>
+						<div class="recent-course-wrap">
+							<img src="/static/images/ui-ux.jpg" alt="Ui/Ux Designing">
+							<a href=""><div class="course-name">
+								<h3>UI/UX Designer courses</h3>
+								<p><span>$50</span> $40</p>
+							</div></a>
+						</div>
+						<div class="recent-course-wrap">
+							<img src="/static/images/ui-ux.jpg" alt="Ui/Ux Designing">
+							<a href=""><div class="course-name">
+								<h3>UI/UX Designer courses</h3>
+								<p><span>$50</span> $40</p>
+							</div></a>
+						</div>
+					</div>
+
+					<div class="box-wrap">
+						<header>
+							<h1>Liên Hệ</h1>
+						</header>
+						<section class="quick-contact">
+							<input type="email" name="email" placeholder="Địa chỉ email*">
+							<textarea placeholder="Nhập thông tin cần hỗ trợ*"></textarea>
+							<button>Thông tin liên hệ </button>
+						</section>
+					</div>
+
+				</div>
+			</div>
+			<!-- End of box-Wrap -->
+			<div class="footer-second-section">
+				<div class="container">
+					<hr class="footer-line">
+					<ul class="social-list">
+						<li><a href="mailto:ask@hoasen.edu.vn"><i class="fab fa-google-plus-g"></i></a></li>
+						<li><a href="https://www.facebook.com/iiehsu"><i class="fab fa-facebook-square"></i></a></li>
+						<li><a href="https://www.facebook.com/iiehsu"><i class="fab fa-facebook-messenger"></i></a></li>
+						<li><a href="https://www.youtube.com/watch?v=3YC3d3fl-34"><i class="fab fa-youtube"></i></a></li>
+					</ul>
+					<hr class="footer-line">
+				</div>
+			</div>
+		</footer>
+
+	
+
+	</div>
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.3.1.min.js')}}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/lightbox.js')}}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/all.js')}}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/isotope.pkgd.min.js')}}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/owl.carousel.js')}}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.flexslider.js')}}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.rateyo.js')}}"></script>
+	<!-- <script type="text/javascript" src="js/jquery.mmenu.all.js"></script> -->
+	<!-- <script type="text/javascript" src="js/jquery.meanmenu.min.js"></script> -->
+	<script type="text/javascript" src="{{ url_for('static', filename='js/custom.js')}}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/check.js')}}"></script>
+
+</body>
+</html>
