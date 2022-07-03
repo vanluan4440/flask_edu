@@ -144,6 +144,11 @@ def ROLE_COUNSELLOR():
 def ROLE_COUNSELLOR_enquiry():
     return render_template('enquiry.html') 
 
+#/ROLE_COUNSELLOR/enquirynote
+@app.route('/ROLE_COUNSELLOR/enquirynote', methods =['GET'] )
+def ROLE_COUNSELLOR_enquirynote():
+    return render_template('enquirynote.html') 
+
 @app.route('/getenquiry',methods=['POST'])
 def getenquiry():
     sql_select_Query = "select * from hsu_enquiry ORDER BY id DESC "
@@ -151,7 +156,12 @@ def getenquiry():
     cursor.execute(sql_select_Query)
     records = cursor.fetchall()
     cursor.close()
-    return jsonify(list(records))
+    return jsonify(list(records)[0:200])
+
+#edit_course
+@app.route('/ROLE_ADMIN/edit_course',methods=['GET'])
+def edit_course():
+   return render_template('edit_course.html')
 
 
 #/ROLE_COUNSELLOR/course

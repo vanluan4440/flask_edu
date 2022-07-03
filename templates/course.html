@@ -35,7 +35,10 @@
                     <a class="nav-link active " aria-current="page" href="#">TÀI KHOẢN</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" href="#">ĐĂNG XUẤT</a>
+                    <a class="nav-link active" id="dx">ĐĂNG XUẤT</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active btn btn-secondary " style="color: white;" aria-current="page" href="#">THÊM KHÓA HỌC</a>
                   </li>
 
                  
@@ -75,46 +78,48 @@
         <script src="assets/demo/chart-bar-demo.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
+        
+        <script type="text/javascript" src="{{ url_for('static', filename='js/dx.js')}}"></script>
         <script>
             $.ajax({
-			url: `${location.origin}/getCourse`,
-			type:'POST',
-			success:(data)=>{
+              url: `${location.origin}/getCourse`,
+              type:'POST',
+              success:(data)=>{
 
-				data.forEach((element,index) => {
-                    if(element[13] == 1) {
-                        let el =`
-                        <tr>
-                            <th scope="col">${element[0]}</th>
-                            <th scope="col">${element[1]}</th>
-                            <th scope="col"><span class="badge badge-danger">ACTIVE</span></th>
-                            <th scope="col"><button type="button" class="btn btn-success">EDIT</button></th>
+                data.forEach((element,index) => {
+                            if(element[13] == 1) {
+                                let el =`
+                                <tr>
+                                    <th scope="col">${element[0]}</th>
+                                    <th scope="col">${element[1]}</th>
+                                    <th scope="col"><span class="badge badge-danger">ACTIVE</span></th>
+                                    <th scope="col"><a class="btn btn-success" href="${window.origin}/ROLE_ADMIN/edit_course?id=${element[0]}">EDIT</a></th>
 
-                        </tr>
-                        `
-                        $('#data').append(el)
+                                </tr>
+                                `
+                                $('#data').append(el)
 
-                    }
-                    else{
-                        let el =`
-                        <tr>
-                            <th scope="col">${element[0]}</th>
-                            <th scope="col">${element[1]}</th>
-                            <th scope="col"><span class="badge badge-secondary">DISABLE</span></th>
-                            <th scope="col"><button type="button" class="btn btn-success">EDIT</button></th>
-                        </tr>
-                        `
-                        $('#data').append(el)
-                    }
-                   
+                            }
+                            else{
+                                let el =`
+                                <tr>
+                                    <th scope="col">${element[0]}</th>
+                                    <th scope="col">${element[1]}</th>
+                                    <th scope="col"><span class="badge badge-secondary">DISABLE</span></th>
+                                    <th scope="col"><a class="btn btn-success" href="${window.origin}/ROLE_ADMIN/edit_course?id=${element[0]}">EDIT</a></th>
+                                </tr>
+                                `
+                                $('#data').append(el)
+                            }
+                          
 
-                });
-				
-			},
-			error:(err)=>{
-				console.log(err);
-			}
-		})
+                        });
+                
+              },
+              error:(err)=>{
+                console.log(err);
+              }
+            })
         </script>
     </body>
 </html>
