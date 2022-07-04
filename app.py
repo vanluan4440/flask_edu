@@ -54,6 +54,12 @@ def course_single():
     return render_template('course-single.html') 
 
 
+
+@app.route("/detail_gallery", methods=['GET'])
+def detail_gallery():
+    return render_template('detail_gallery.html') 
+
+
 @app.route('/getCourse',methods=['POST'])
 def getCource():
     sql_select_Query = "select * from hsu_course ORDER BY priority DESC "
@@ -62,6 +68,15 @@ def getCource():
     records = cursor.fetchall()
     cursor.close()
     return jsonify(list(records))
+
+@app.route('/getCourse_crm',methods=['POST'])
+def getCource_crm():
+    sql_select_Query = "select * from crm_course "
+    cursor = mysql.connection.cursor()
+    cursor.execute(sql_select_Query)
+    records = cursor.fetchall()
+    cursor.close()
+    return jsonify(list(records)[0:60])
     
 
 @app.route('/login_form', methods=['POST'])
@@ -157,6 +172,27 @@ def getenquiry():
     records = cursor.fetchall()
     cursor.close()
     return jsonify(list(records)[0:200])
+
+
+@app.route('/getDetailCourse',methods=['GET'])
+def getDetailCourse():
+    id = request.args.get('id')
+    sql_select_Query = "select * from hsu_course WHERE id = '{}'".format(id)
+    cursor = mysql.connection.cursor()
+    cursor.execute(sql_select_Query)
+    records = cursor.fetchall()
+    cursor.close()
+    return jsonify(list(records))
+
+@app.route('/getDetailCourse2',methods=['GET'])
+def getDetailCourse2():
+    id = request.args.get('id')
+    sql_select_Query = "select * from crm_course WHERE id = '{}'".format(id)
+    cursor = mysql.connection.cursor()
+    cursor.execute(sql_select_Query)
+    records = cursor.fetchall()
+    cursor.close()
+    return jsonify(list(records))
 
 #edit_course
 @app.route('/ROLE_ADMIN/edit_course',methods=['GET'])

@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Dạy lập trình </title>
+	<title id="title_page"> </title>
 	<meta name="viewport" content="width=device-width">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='all.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='all.min.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='flexslider')}}">
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='lightbox.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='jquery.rateyo.all.css')}}">
+	
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='owl.theme.default.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='owl.carousel.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='jquery.mmenu.all.css')}}" >
@@ -17,6 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
 </head>
 <body>
+<!-- <body class="full-width"> -->
 	<div id="page" class="site">
 		<header class="site-header">
 			<div class="top-header">
@@ -38,13 +35,8 @@
 							</ul>
 						</div>
 						<div class="login-block">
-							<div class="b1">
-								<a href="/login">Đăng nhập</a>
-								
-							</div>
-							<div class="b2">
-							<!-- <p style="color:white ;">Đã đăng nhập</p> -->
-							</div>
+							<a href="/login">Đăng nhập</a>
+							
 						</div>
 					</div>
 				</div>
@@ -66,7 +58,6 @@
 								<li><a href="/gallery2">Lịch khai giảng</a></li>
 								<li><a href="/contact">Liên Hệ</a></li>
 							</ul>
-							</ul>
 						</nav>
 						<div id="bar">
 							<i class="fas fa-bars"></i>
@@ -79,64 +70,156 @@
 			</div>
 		</header>
 		<!-- Header Close -->
-		<div class="banner">
-			<div class="owl-four owl-carousel">
-					<img src="/static/slider/slider-1.png" alt="Image of Bannner">
-				<img src="/static/slider/slider-2.png" alt="Image of Bannner">
-				<img src="/static/slider/slider-3.png" alt="Image of Bannner">
-			</div>
-			<!-- <div class="container">
-				<h1>Chào mừng bạn đến với Website dạy lập trình  </h1>
-				<h3>WebSite của chúng tôi sẽ giúp bạn hiểu hơn về công nghê là gì </h3>
-			</div> -->
-			 <div id="owl-four-nav" class="owl-nav"></div>
-		</div>
-	
-		<section class="course-listing-page" style="height: 8000px;">
+		<section class="page-content" id="course-page">
 			<div class="container">
-				<!-- <div id="filters" class="button-group">
-					<button class="button" data-filter="*">all</button>
-  					<button class="button" data-filter=".business">business</button>
-  					<button class="button" data-filter=".design">design</button>
-  					<button class="button" data-filter=".development">development</button>
-  					<button class="button" data-filter=".seo">seo</button>
-  					<button class="button" data-filter=".marketing">marketing</button>
-				</div> -->
+				<main class="course-detail">
+					<h2 id="title_course"></h2>
+					<header>
+						<div class="course-box">
+							<i class="far fa-clock"></i>
+							<p>4 years</p>
+							<p>(5 hours/day)</p>
+						</div>
 
-				<div class="grid" id="cGrid">
-				
-				</div>
+						<div class="course-box">
+							<i class="fas fa-chalkboard-teacher"></i>
+							<p>20 students/ class</p>
+						</div>
+
+						<div class="course-box">
+							<i class="fas fa-money-check-alt"></i>
+							<p>$ 50,00</p>
+							<p>(Books are included)</p>
+						</div>
+
+						
+					</header>
+					<article>
+						<section class="course-intro">
+							<h3>Giới thiệu </h3>
+
+							<p id="desc"></p>
+						</section>
+
+						<section class="course-objective">
+							<h3>Mục tiêu</h3>
+							<div id="muctieu">
+
+							</div>
+						</section>
+					</article>					
+				</main>
+				<aside>
+					
+					<!-- New Letter Ends -->
+					<div class="recent-post">
+						<h2>trainers</h2>
+						<div class="post">
+							<div class="post-wrap">
+								<div class="img-wrap">
+									<img src="/static/images/Ducanh.jpg" alt="Post /static/images">
+								</div>
+								<div class="post-content">
+									<a href="blog-edu-single.html">
+										<h3>Trương Đức Anh</h3>
+										<p>Web Developer</p>
+									</a>
+									<span>
+										<a href="https://www.facebook.com/tuyen.lethi.9083/"><i class="fab fa-facebook-f"></i></a>
+										<a href="https://www.instagram.com/duan.nicky/"><i class="fab fa-instagram"></i></a>
+										
+									</span>
+								</div>
+							</div>
+
+							<div class="post-wrap">
+								<div class="img-wrap">
+									<img src="/static/images/AnhDuy.jpg" alt="Post /static/images">
+								</div>
+								<div class="post-content">
+									<a href="#">
+										<h3>Nguyễn Hoàng Anh Duy</h3>
+										<p>Android App</p>
+									</a>
+									<span>
+										<a href="https://www.facebook.com/profile.php?id=100005059809899"><i class="fab fa-facebook-f"></i></a>
+										<a href="https://www.instagram.com/anhduy2711/"><i class="fab fa-instagram"></i></a>
+									</span>
+								</div>
+							</div>
+                            <div class="post-wrap">
+								<div class="img-wrap">
+									<img src="/static/images/Ducanh.jpg" alt="Post /static/images">
+								</div>
+								<div class="post-content">
+									<a href="blog-edu-single.html">
+										<h3>Trương Đức Anh</h3>
+										<p>Web Developer</p>
+									</a>
+									<span>
+										<a href="https://www.facebook.com/tuyen.lethi.9083/"><i class="fab fa-facebook-f"></i></a>
+										<a href="https://www.instagram.com/duan.nicky/"><i class="fab fa-instagram"></i></a>
+										
+									</span>
+								</div>
+							</div>
+                            <div class="post-wrap">
+								<div class="img-wrap">
+									<img src="/static/images/Ducanh.jpg" alt="Post /static/images">
+								</div>
+								<div class="post-content">
+									<a href="blog-edu-single.html">
+										<h3>Trương Đức Anh</h3>
+										<p>Web Developer</p>
+									</a>
+									<span>
+										<a href="https://www.facebook.com/tuyen.lethi.9083/"><i class="fab fa-facebook-f"></i></a>
+										<a href="https://www.instagram.com/duan.nicky/"><i class="fab fa-instagram"></i></a>
+										
+									</span>
+								</div>
+							</div>
+                            
+
+							
+						</div>
+					</div>
+					<!-- Recent Post Close -->
+				</aside>
 			</div>
 		</section>
-		<footer class="page-footer" itemprop="footer" itemscope itemtype="http://schema.org/WPFooter">
+		
+
+		
+		<!-- End of Query Section -->
+		<footer class="page-footer">
 			<div class="footer-first-section">
 				<div class="container">
-					<div class="box-wrap" itemprop="about">
+					<div class="box-wrap">
 						<header>
-							<h1>Về WebSite</h1>
+							<h1>about</h1>
 						</header>
 						<p>WebSite của chúng tôi cung cấp các khoá học đúng tiêu chuẩn cũng như đúng nhu cầu của các doanh nghiệp trong và ngoài nước cần.</p>
 
-						<h4><a href="tel:+84 0383067320"><i class="fas fa-phone"></i> +84 0383067320</a></h4>
+						<h4><a href="tel:+840383067320"><i class="fas fa-phone"></i> +84 0383067320</a></h4>
 						<h4><a href="mailto:info@educationpro.com"><i class="fas fa-envelope"></i> info@educationpro.com</a></h4>
 						<h4><i class="fas fa-map-marker-alt"></i>Số 8 Nguyễn Văn Tráng, Hồ Chí Minh</h4>
 						<!-- <iFrame src="https://map.coccoc.com/map/291898860264544?borders=20.905111944444002%2C105.70787972222%2C21.112853888889%2C105.93691972222&query=s%E1%BB%91+8+nguy%E1%BB%85n+v%C4%83n+tr%C3%A1ng" width="680" height="480" >Nguyễn Văn Tráng, Hồ Chí Minh </iFrame> -->
 					</div>
-	
 					<div class="box-wrap">
 						<header>
 							<h1>Lớp học dự kiến </h1>
 						</header>
 						<div class="recent-course-wrap">
 							<img src="/static/images/ui-ux.jpg" alt="Ui/Ux Designing">
-							<a href=""><div class="course-name">
+							<a href="/courselisting"><div class="course-name">
 								<h3>UI/UX Designer courses</h3>
 								<p><span>$50</span> $40</p>
 							</div></a>
 						</div>
 						<div class="recent-course-wrap">
 							<img src="/static/images/ui-ux.jpg" alt="Ui/Ux Designing">
-							<a href=""><div class="course-name">
+							<a href="/courselisting"><div class="course-name">
 								<h3>UI/UX Designer courses</h3>
 								<p><span>$50</span> $40</p>
 							</div></a>
@@ -169,62 +252,44 @@
 					<hr class="footer-line">
 				</div>
 			</div>
-		</footer>
-
-
-		<!-- <section class="query-section">
-			<div class="container">
-				<p>Đặt liên hệ? Hỏi chúng tôi qua số điện thoại<a href="tel:+84 0383067320"><i class="fas fa-phone"></i> +84 0383067320</a></p>
+			<div class="footer-last-section">
+				<div class="container">
+					<p>Copyright 2018 &copy; educationpro.com <span> | </span> Theme designed and developed by <a href="https://labtheme.com">Lab Theme</a></p>
+				</div>
 			</div>
-		</section> -->
-		<!-- End of Query Section -->
-		<!--  -->
+		</footer>
 	</div>
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
 	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.3.1.min.js')}}"></script>
 	<script type="text/javascript" src="{{ url_for('static', filename='js/lightbox.js')}}"></script>
 	<script type="text/javascript" src="{{ url_for('static', filename='js/all.js')}}"></script>
-	<script type="text/javascript" src="{{ url_for('static', filename='js/isotope.pkgd.min.js')}}"></script>
 	<script type="text/javascript" src="{{ url_for('static', filename='js/owl.carousel.js')}}"></script>
 	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.flexslider.js')}}"></script>
 	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.rateyo.js')}}"></script>
-	<!-- <script type="text/javascript" src="js/jquery.mmenu.all.js"></script> -->
-	<!-- <script type="text/javascript" src="js/jquery.meanmenu.min.js"></script> -->
-	<script type="text/javascript" src="{{ url_for('static', filename='js/custom.js')}}"></script>
-	<script type="text/javascript" src="{{ url_for('static', filename='js/check.js')}}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.mmenu.all.js')}}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/isotope.pkgd.min.js')}}"></script>
 	<script>
-		console.log('hello');
+		let params = new URLSearchParams(location.search);
+        const id = params.get('id')
+		console.log(id);
 		$.ajax({
-			url: `${location.origin}/getCourse_crm`,
-			type:'POST',
+			url: `${window.origin}/getDetailCourse2?id=${id}`,
+			type: 'GET',
 			success:(data)=>{
-				for (const element of data) {
-					let el = `
-					<div class="grid-item design" data-category="seo">
-						<div class="img-wrap">
-							<img src="/static/images/EPS.jpg" alt="courses picture">
-						</div>
-						
-						<div class="box-body">
-							<a href="${window.origin}/detail_gallery?id=${element[0]}" style="text-transform: capitalize; color: blue;font-size: 16px;">${element[1]}</a>
-							<section>
-								<p><span>Thời gian:</span> ${element[0]} months </p>
-							
-							</section>
-						</div>
-					</div>
-
-					
-					`
-					
-					$('#cGrid').append(el)
-				}
+				console.log(data);
+				$('#title_course').append(`${data[0][1]}`)
+				$('#desc').append(`${data[0][5]}`)
+				$('#muctieu').html(`${data[0][4]}`)
+				$('#title_page').append(`${data[0][7]}`)
 			},
 			error:(err)=>{
 				console.log(err);
+				alert('Lỗi hệ thống')
 			}
 		})
+	
+		
 	</script>
 </body>
 </html>

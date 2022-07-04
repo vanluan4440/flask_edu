@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Dạy lập trình </title>
+	<title id="title_page"> </title>
 	<meta name="viewport" content="width=device-width">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='all.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='all.min.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='flexslider')}}">
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='lightbox.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='jquery.rateyo.all.css')}}">
+	
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='owl.theme.default.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='owl.carousel.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='jquery.mmenu.all.css')}}" >
@@ -77,7 +73,7 @@
 		<section class="page-content" id="course-page">
 			<div class="container">
 				<main class="course-detail">
-					<h2>learn web designing</h2>
+					<h2 id="title_course"></h2>
 					<header>
 						<div class="course-box">
 							<i class="far fa-clock"></i>
@@ -96,50 +92,20 @@
 							<p>(Books are included)</p>
 						</div>
 
-						<div class="course-box">
-							<h3>course syallabus</h3>
-							<button>download pdf</button>
-						</div>
+						
 					</header>
 					<article>
 						<section class="course-intro">
 							<h3>Giới thiệu </h3>
 
-							<p>Lập trình web cũng là một trong những giai đoạn của quá trình xây dựng trang web,
-								công việc của họ là nhận thông tin do khách hàng yêu cầu kết hợp
-								với giao diện của nhóm thiết kế web để chuyển sang lập trình thành website. hoàn thành.
-								Nhóm phát triển web được chia thành hai thành phần:
-								Nhà phát triển Frontend và Nhà phát triển phụ trợ.</p>
+							<p id="desc"></p>
 						</section>
 
 						<section class="course-objective">
 							<h3>Mục tiêu</h3>
-							<p>Sau khóa học này, sinh viên sẽ có thể:</p>
-							<ul>
-								<li> Phát triển các trang Web tương tác bằng XHTML, HTML / DHTML & CSS</li>
-								<li>Tạo các biểu mẫu tương tác nắm bắt và xác thực thông tin đầu vào của người dùng bằng JavaScript</li>
-								<li>Kiểm soát các Applet Java, Điều khiển ActiveX và các trình cắm thêm khác</li>
-								<li>Nâng cao kỹ năng lập trình PHP để xây dựng thành công các ứng dụng web tương tác, theo hướng dữ liệu</li>
-								<li>Phát triển các trang Web tương tác bằng XHTML, HTML / DHTML & CSS</li>
-							</ul>
+							<div id="muctieu">
 
-							<h3>Chứng nhận</h3>
-							<p>Sau khóa học này bạn có thể nhân được chứng chỉ do nhà chính chúng tôi liên kết với các khoá học nước ngoài để tạo cơ hội cho các bạn </p>
-
-							<h3>Ai có thể đăng ký khóa học này?</h3>
-							<ul>
-								<li>+2 với giảng viên khoa học</li>
-								<li>+2 với khoa quản lý</li>
-								<li>+2 với giảng viên khoa học</li>
-							</ul>
-
-							<h3>Phương pháp đào tạo</h3>
-							<ul>
-								<li>Kiểm tra hàng tuần</li>
-								<li>Lớp kỹ thuật số</li>
-								<li>Tham quan thực địa và trình diễn dự án thực tế</li>
-								<li>+2 với quản lý</li>
-							</ul>
+							</div>
 						</section>
 					</article>					
 				</main>
@@ -270,6 +236,8 @@
 			</div>
 		</footer>
 	</div>
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
 	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.3.1.min.js')}}"></script>
 	<script type="text/javascript" src="{{ url_for('static', filename='js/lightbox.js')}}"></script>
 	<script type="text/javascript" src="{{ url_for('static', filename='js/all.js')}}"></script>
@@ -277,7 +245,28 @@
 	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.flexslider.js')}}"></script>
 	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.rateyo.js')}}"></script>
 	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.mmenu.all.js')}}"></script>
-	<script type="text/javascript" src="{{ url_for('static', filename='js/custom.js')}}"></script>
 	<script type="text/javascript" src="{{ url_for('static', filename='js/isotope.pkgd.min.js')}}"></script>
+	<script>
+		let params = new URLSearchParams(location.search);
+        const id = params.get('id')
+		console.log(id);
+		$.ajax({
+			url: `${window.origin}/getDetailCourse?id=${id}`,
+			type: 'GET',
+			success:(data)=>{
+				console.log(data);
+				$('#title_course').append(`${data[0][1]}`)
+				$('#desc').append(`${data[0][5]}`)
+				$('#muctieu').html(`${data[0][4]}`)
+				$('#title_page').append(`${data[0][8]}`)
+			},
+			error:(err)=>{
+				console.log(err);
+				alert('Lỗi hệ thống')
+			}
+		})
+	
+		
+	</script>
 </body>
 </html>
