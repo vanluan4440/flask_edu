@@ -1,9 +1,5 @@
 
-
 from flask import Flask,redirect, request,url_for,render_template,flash
-import json
-import os
-from os.path import join, dirname
 from flask import jsonify
 from flask_mysqldb import MySQL
 
@@ -205,3 +201,18 @@ def edit_course():
 @app.route('/ROLE_ADMIN/course', methods =['GET'] )
 def ROLE_COUNSELLOR_course():
     return render_template('course.html') 
+
+
+@app.route('/sentInformation',methods = ['POST'])
+
+def sentInformation():
+    email = request.form.get('email')
+    name = request.form.get('name')
+    subject = request.form.get('subject')
+    message = request.form.get('mesages')
+    sql = "INSERT INTO `hsu_contact`(`email`, `name`, `sub`, `message`) VALUES ('{}','{}','{}','{}')".format(email,name,subject,message)
+    cursor = mysql.connection.cursor()
+    cursor.execute(sql)
+    mysql.connection.commit()
+    cursor.close()
+    return jsonify({'message':'Thành công'})

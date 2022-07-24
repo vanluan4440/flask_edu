@@ -80,35 +80,10 @@
 				<img src="/static/slider/slider-2.png" alt="Image of Bannner">
 				<img src="/static/slider/slider-3.png" alt="Image of Bannner">
 			</div>
-			<!-- <div class="container">
-				<h1>WellCome To My Website </h1>
-				<h3>Our Website Can Help You Know About The Information Technology </h3>
-			</div> -->
+			
 			 <div id="owl-four-nav" class="owl-nav"></div>
 		</div>
-		<!-- <div class="banner">
-			<div class="owl-five owl-carousel owl-theme">
-	            <div class="item-video">
-            		<iframe width="100%" height="450" src="https://www.youtube.com/embed/ENVW3uZ3a-4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-            		</iframe>
-	            </div>
-	            <div class="item-video">
-	            	<iframe width="100%" height="450" src="https://www.youtube.com/embed/0bfk90rWV9U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	            </div>
-	            <div class="item-video">
-	            	<iframe width="100%" height="450" src="https://www.youtube.com/embed/ktvTqknDobU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	            </div>
-	            <div class="item-video">
-            		<iframe width="100%" height="450" src="https://www.youtube.com/embed/ENVW3uZ3a-4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-            		</iframe>
-	            </div>
-	            <div class="item-video">
-	            	<iframe width="100%" height="450" src="https://www.youtube.com/embed/0bfk90rWV9U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	            </div>
-	            <div class="item-video">
-	            	<iframe width="100%" height="450" src="https://www.youtube.com/embed/ktvTqknDobU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	            </div>
-          </div>
+	
 		</div> -->
 		<section class="contact-page-section">
 			<div class="container">
@@ -118,14 +93,27 @@
 						vui lòng điền thông tin bên dưới và chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất</p>
 					<form>
 						<span>
-						<input type="text" placeholder="Full Name*" class="input- name">
-						<input type="email" placeholder="Email*" class="input- email">
+						<input type="text" placeholder="Full Name*" id="name" class="input- name">
+						<input type="email" placeholder="Email*" id="email" class="input- email">
 						</span>
-						<input type="text" placeholder="Subject*" class="input- subject">
-						<textarea placeholder="Messages*" class="input-">
+						<input type="text" placeholder="Subject*" id="subject" class="input- subject">
+						<textarea placeholder="Messages*" id="mesages" class="input-">
 							
 						</textarea>
-						<input type="submit" value="submit now">
+						<input type="button" style="  
+						 font-size: 1.6rem; 
+						background: #2d77bf;
+						color: #fff;
+						text-transform: uppercase;
+						text-align: center;
+						width: 100%;
+						padding-top: 1.1em;
+						padding-bottom: 1.1em;
+						margin-top: 1.875em;
+						cursor: pointer;
+						" 
+						
+						id="sent" value="GỬI THÔNG TIN">
 					</form>
 				</div>
 
@@ -172,7 +160,6 @@
 						<h4><a href="tel:+84 0383067320"><i class="fas fa-phone"></i> +84 0383067320</a></h4>
 						<h4><a href="mailto:info@educationpro.com"><i class="fas fa-envelope"></i> info@educationpro.com</a></h4>
 						<h4><i class="fas fa-map-marker-alt"></i>Số 8 Nguyễn Văn Tráng, Hồ Chí Minh</h4>
-						<!-- <iFrame src="https://map.coccoc.com/map/291898860264544?borders=20.905111944444002%2C105.70787972222%2C21.112853888889%2C105.93691972222&query=s%E1%BB%91+8+nguy%E1%BB%85n+v%C4%83n+tr%C3%A1ng" width="680" height="480" >Nguyễn Văn Tráng, Hồ Chí Minh </iFrame> -->
 					</div>
 	
 					<div class="box-wrap">
@@ -216,11 +203,8 @@
 			</div>
 			
 		</footer>
-
-
-		
-
 	</div>
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.3.1.min.js')}}"></script>
 	<script type="text/javascript" src="{{ url_for('static', filename='js/lightbox.js')}}"></script>
 	<script type="text/javascript" src="{{ url_for('static', filename='js/all.js')}}"></script>
@@ -228,9 +212,40 @@
 	<script type="text/javascript" src="{{ url_for('static', filename='js/owl.carousel.js')}}"></script>
 	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.flexslider.js')}}"></script>
 	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.rateyo.js')}}"></script>
-	<!-- <script type="text/javascript" src="js/jquery.mmenu.all.js"></script> -->
-	<!-- <script type="text/javascript" src="js/jquery.meanmenu.min.js"></script> -->
 	<script type="text/javascript" src="{{ url_for('static', filename='js/custom.js')}}"></script>
 	<script type="text/javascript" src="{{ url_for('static', filename='js/check.js')}}"></script>
+	<script>
+		$('#sent').click(()=>{
+			const email = $('#email').val()
+			const name = $('#name').val()
+			const subject = $('#subject').val()
+			const mesages = $('#mesages').val()
+			if(email && name && subject && mesages){
+				$.ajax({
+				url: `${window.origin}/sentInformation`,
+				data:{
+					email: email,
+					name: name,
+					subject: subject,
+					mesages: mesages
+				},
+				type:'POST',
+				success:(data)=>{
+					alert('Gửi thông tin thành công')
+				},
+				error:(err)=>{
+					
+					alert('Không gửi được thông tin')
+				}
+				})
+			}
+			else{
+				alert('Thiếu thông tin ')
+			}
+			
+
+		})
+		
+	</script>
 </body>
 </html>
