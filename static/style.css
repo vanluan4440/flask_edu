@@ -1,58 +1,32 @@
-/*!
-Theme Name: edulab
-Theme URI: http://underscores.me/
-Author: Underscores.me
-Author URI: http://underscores.me/
-Description: Description
-Version: 1.0.0
-License: GNU General Public License v2 or later
-License URI: LICENSE
-Text Domain: edulab
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-
-edulab is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
-*/
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-# Normalize
-# Typography
-# Elements
-# Forms
-# Navigation
-	## Links
-	## Menus
-# Accessibility
-# Alignments
-# Clearings
-# Widgets
-# Content
-	## Posts and pages
-	## Comments
-# Infinite scroll
-# Media
-	## Captions
-	## Galleries
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# Normalize
---------------------------------------------------------------*/
-/* normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
-
-/* Document
-	 ========================================================================== */
-
-/**
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
- */
+.pagination {
+	display: inline-block;
+  }
+  
+  .pagination a {
+	color: black;
+	float: left;
+	padding: 8px 16px;
+	text-decoration: none;
+	border: 1px solid #ddd;
+  }
+  
+  .pagination a.active {
+	background-color: #4CAF50;
+	color: white;
+	border: 1px solid #4CAF50;
+  }
+  
+  .pagination a:hover:not(.active) {background-color: #ddd;}
+  
+  .pagination a:first-child {
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+  }
+  
+  .pagination a:last-child {
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+  }
 
 html {
 	font-size: 62.5%;
@@ -673,6 +647,7 @@ a:hover, a:active {
 
 .social-block {
 	margin-right: 8.5rem;
+	display: none;
 }
 
 .top-header-right .social-list li {
@@ -882,8 +857,8 @@ ul > li {
 	overflow: hidden;
 }*/
 
-.course-listing-page .button-group, 
-.gallery-section .button-group, 
+.course-listing-page .button-group,
+.gallery-section .button-group,
 .gallery-section2 .button-group {
 	text-align: center;
 	margin-bottom: 4.375em;
@@ -938,7 +913,7 @@ ul > li {
 }
 
 .course-listing-page .grid {
-	
+
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		padding: 20px;
@@ -958,11 +933,11 @@ ul > li {
 
 .learn-courses .box-wrap, .recent-course-single .grid-item{
 	position: relative;
-	margin-bottom: 30px;
+	/* margin-bottom: 30px; */
 }
 
-.learn-courses .box-wrap .img-wrap, 
-.course-listing-page .grid-item .img-wrap, 
+.learn-courses .box-wrap .img-wrap,
+.course-listing-page .grid-item .img-wrap,
 .recent-course-single .grid-item .img-wrap{
 	margin-bottom: -7px;
 }
@@ -970,23 +945,19 @@ ul > li {
 .learn-courses .learn-desining-banner,
 .course-listing-page .grid-item .learn-desining-banner-course,
 .recent-course-single .grid-item .learn-desining-banner-course {
-	position: absolute;
-	left: 5%;
-	top: 44%;
-	/*background: #009450;*/
-	padding: 0.9375em 3.5625em 1em 3.5625em;
-	/*font-size: 1.8rem;*/
-	/*font-family: "Raleway", sans-serif;*/
-	color: orange;
-	/*text-decoration: none;*/
+	background: #009450;
+    color: orange;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
 }
 
-.course-listing-page .grid-item .learn-desining-banner-course, 
+.course-listing-page .grid-item .learn-desining-banner-course,
 .recent-course-single .grid-item .learn-desining-banner-course{
-	/*background: #1c3961;*/
+	background: #1c3961;
 }
 
-.learn-courses .box-wrap .box-body, 
+.learn-courses .box-wrap .box-body,
 .course-listing-page .grid-item .box-body,
 .recent-course-single .grid-item .box-body{
 	border: 1px solid #b7b7b7;
@@ -994,7 +965,7 @@ ul > li {
 	padding-top: 2.8125em;
 }
 
-.learn-courses .box-body p, 
+.learn-courses .box-body p,
 .course-listing-page .grid-item .box-body p,
 .recent-course-single .grid-item .box-body p {
 	/*font-size: 1.4rem;*/
@@ -1002,18 +973,17 @@ ul > li {
 	/*color: #5c5c5c;*/
 }
 
-.learn-courses .box-body > p, 
+.learn-courses .box-body > p,
 .course-listing-page .grid-item .box-body > p,
 .recent-course-single .grid-item .box-body > p {
-	/* margin-top: 1.428em; */
-	margin-bottom: 2.1428em;
+	margin-top: 1.428em;
 }
 
 .learn-courses .box-body section p {
 	/*font-family: 'Raleway', sans-serif;*/
 }
 
-.learn-courses .box-body p span , 
+.learn-courses .box-body p span ,
 .course-listing-page .grid-item .box-body p span,
 .recent-course-single .grid-item .box-body p span{
 	color: #060e1a;
@@ -1237,15 +1207,11 @@ ul > li {
 
 .event-wrap .details {
 	width: 47.368%;
-	padding: 1.25em;
-	position: absolute;
-	right: 0;
-	top: 6.78%;
-	z-index: 999;
-	/*background: #fff;*/
-	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    padding: 2.25em;
+    position: absolute;
+    right: 0;
+    top: -0.22%;
+    z-index: 999;
 }
 
 .details h3 {
@@ -1504,6 +1470,7 @@ ul > li {
 	flex: 1;
 	flex-flow: row wrap;
 	justify-content: space-between;
+	background-color: #1c3961;
 }
 
 .footer-second-section .footer-line {
@@ -1598,8 +1565,8 @@ ul > li {
 }
 
 .grid-box-wrap .grid-img img {
-	border-top-right-radius: 5px; 
-	border-top-left-radius: 5px; 
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
 }
 
 .grid-box-wrap .grid-body {
@@ -1628,7 +1595,7 @@ ul > li {
 	/*font-size: 1.6rem;*/
 	/*font-family: 'Raleway', sans-serif;*/
 	/*color: #5c5c5c;*/
-}	
+}
 
 .grid-box-wrap .grid-body a {
 	/*text-decoration: none;*/
@@ -1768,7 +1735,7 @@ aside .news-letter hr {
 	border: 1px solid #c7c7c7;
 	border-radius: 5px;
 	padding: 1.5625em;
-	padding-bottom: 2em; 
+	padding-bottom: 2em;
 }
 
 .page-content .follow-us h2 {
@@ -1883,7 +1850,7 @@ aside .news-letter hr {
 .page-content .page-article a::after {
 	content: "";
 	border: 1px solid #ccc;
-	width: 1px; 
+	width: 1px;
 	margin-left: 19px;
 	margin-right: 19px;
 }
@@ -2333,7 +2300,7 @@ aside .news-letter hr {
 
 .team-members .developer-wrap img {
 	width: 170px;
-	height: 170px;	
+	height: 170px;
 	/*border-radius: 50%;*/
 	border-bottom-left-radius: 50%;
  	border-bottom-right-radius: 50%;
@@ -2709,7 +2676,7 @@ RESPONSIVE STYLESHEET
 	.latest-news .container .owl-carousel .owl-nav {
 		margin-top: 0;
 	}
-	
+
 
 	/*==Footer Line Part=====*/
 	.page-footer .footer-second-section .footer-line {
@@ -2769,7 +2736,7 @@ RESPONSIVE STYLESHEET
 		Course Listing Page
 	======================================*/
 
-	.course-listing-page .button-group::after, 
+	.course-listing-page .button-group::after,
 	.gallery-section2 .button-group::after{
 		left: 23%;
 	}
@@ -2834,14 +2801,14 @@ RESPONSIVE STYLESHEET
 	/*====navigation=====*/
 	.menu-list {
 		flex-direction: column;
-	}	
+	}
 
 	.nav-desktop {
 		display: none;
 		width: 250px;
 	}
 
-	
+
 
 	.nav-desktop ul ul {
 		position: static;
@@ -3017,7 +2984,7 @@ RESPONSIVE STYLESHEET
 	#course-page .course-intro {
 		padding-top: 3em;
 	}
-	
+
 }
 
 @media screen and (max-width: 767px) {
@@ -3267,8 +3234,8 @@ RESPONSIVE STYLESHEET
 
 	/*===Popular Courses==*/
 
-	.learn-courses .learn-desining-banner, 
-	.course-listing-page .grid-item .learn-desining-banner-course, 
+	.learn-courses .learn-desining-banner,
+	.course-listing-page .grid-item .learn-desining-banner-course,
 	.recent-course-single .grid-item .learn-desining-banner-course {
 		top: 37% !important;
 		left: 3%;
@@ -3284,7 +3251,7 @@ RESPONSIVE STYLESHEET
 	}
 
 	.events-section .event-wrap,
-	.events-section .event-wrap .img-wrap 
+	.events-section .event-wrap .img-wrap
 	{
 		width: 280px;
 	}
@@ -3332,12 +3299,12 @@ RESPONSIVE STYLESHEET
 		Course Listing Page
 	==========================*/
 
-	.course-listing-page .button-group::after, 
+	.course-listing-page .button-group::after,
 	.gallery-section2 .button-group::after {
 		width: 240px;
 	}
 
-	.course-listing-page .grid-item, 
+	.course-listing-page .grid-item,
 	.recent-course-single .grid-item {
     width: 270px;
 	}
@@ -3436,7 +3403,7 @@ RESPONSIVE STYLESHEET
 	padding: 34px 65px 45px 65px;
 }
 
-.what-other-say .container .customer-item .customer-img, 
+.what-other-say .container .customer-item .customer-img,
 .what-other-say .container .customer-item .rateYo{
 	text-align: center;
 	margin-left: auto;

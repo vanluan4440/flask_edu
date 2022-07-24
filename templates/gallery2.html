@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Dạy lập trình </title>
 	<meta name="viewport" content="width=device-width">
@@ -11,11 +12,12 @@
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='jquery.rateyo.all.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='owl.theme.default.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='owl.carousel.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='jquery.mmenu.all.css')}}" >
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='jquery.mmenu.all.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='meanmenu.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='inner-page-style.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
 </head>
+
 <body>
 	<div id="page" class="site">
 		<header class="site-header">
@@ -23,7 +25,8 @@
 				<div class="container">
 					<div class="top-header-left">
 						<div class="top-header-block">
-							<a href="mailto:info@educationpro.com"><i class="fas fa-envelope"></i> info@educationpro.com</a>
+							<a href="mailto:info@educationpro.com"><i class="fas fa-envelope"></i>
+								info@educationpro.com</a>
 						</div>
 						<div class="top-header-block">
 							<a href="tel:+840383067320"><i class="fas fa-phone"></i> +84 0383067320</a>
@@ -33,17 +36,18 @@
 						<div class="social-block">
 							<ul class="social-list">
 								<li><a href="mailto:ask@hoasen.edu.vn"><i class="fab fa-google-plus-g"></i></a></li>
-								<li><a href="https://www.facebook.com/iiehsu"><i class="fab fa-facebook-square"></i></a></li>
-								<li><a href="https://www.facebook.com/iiehsu"><i class="fab fa-facebook-messenger"></i></a></li>
+								<li><a href="https://www.facebook.com/iiehsu"><i class="fab fa-facebook-square"></i></a>
+								</li>
+								<li><a href="https://www.facebook.com/iiehsu"><i
+											class="fab fa-facebook-messenger"></i></a></li>
 							</ul>
 						</div>
 						<div class="login-block">
 							<div class="b1">
 								<a href="/login">Đăng nhập</a>
-								
+
 							</div>
 							<div class="b2">
-							<!-- <p style="color:white ;">Đã đăng nhập</p> -->
 							</div>
 						</div>
 					</div>
@@ -62,7 +66,7 @@
 								<li><a href="/event">Sự Kiện </a>
 									<!-- <ul class="sub-menu"></ul> -->
 								</li>
-								<li ><a href="/courselisting">Khoá Học Ngắn Hạn </a></li>
+								<li><a href="/courselisting">Khoá Học Ngắn Hạn </a></li>
 								<li><a href="/gallery2">Lịch khai giảng</a></li>
 								<li><a href="/contact">Liên Hệ</a></li>
 							</ul>
@@ -81,32 +85,40 @@
 		<!-- Header Close -->
 		<div class="banner">
 			<div class="owl-four owl-carousel">
-					<img src="/static/slider/slider-1.png" alt="Image of Bannner">
+				<img src="/static/slider/slider-1.png" alt="Image of Bannner">
 				<img src="/static/slider/slider-2.png" alt="Image of Bannner">
 				<img src="/static/slider/slider-3.png" alt="Image of Bannner">
 			</div>
-			<!-- <div class="container">
-				<h1>Chào mừng bạn đến với Website dạy lập trình  </h1>
-				<h3>WebSite của chúng tôi sẽ giúp bạn hiểu hơn về công nghê là gì </h3>
-			</div> -->
-			 <div id="owl-four-nav" class="owl-nav"></div>
+			<div id="owl-four-nav" class="owl-nav"></div>
 		</div>
-	
-		<section class="course-listing-page" style="height: 8000px;">
-			<div class="container">
-				<!-- <div id="filters" class="button-group">
-					<button class="button" data-filter="*">all</button>
-  					<button class="button" data-filter=".business">business</button>
-  					<button class="button" data-filter=".design">design</button>
-  					<button class="button" data-filter=".development">development</button>
-  					<button class="button" data-filter=".seo">seo</button>
-  					<button class="button" data-filter=".marketing">marketing</button>
-				</div> -->
 
-				<div class="grid" id="cGrid">
+		<section class="course-listing-page">
+			<div class="container">
+				<div class="box" style="display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				padding: 20px;
+				grid-gap: 40px;">
+
+				</div>
+
+
 				
+
+			</div>
+			<div class="container" style="display: flex;
+			justify-content: center;">
+				<div class="pagination">
+					<a href="#">&laquo;</a>
+					<a href="#">1</a>
+					<a class="active" href="#">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
+					<a href="#">5</a>
+					<a href="#">6</a>
+					<a href="#">&raquo;</a>
 				</div>
 			</div>
+
 		</section>
 		<footer class="page-footer" itemprop="footer" itemscope itemtype="http://schema.org/WPFooter">
 			<div class="footer-first-section">
@@ -115,31 +127,38 @@
 						<header>
 							<h1>Về WebSite</h1>
 						</header>
-						<p>WebSite của chúng tôi cung cấp các khoá học đúng tiêu chuẩn cũng như đúng nhu cầu của các doanh nghiệp trong và ngoài nước cần.</p>
+						<p>WebSite của chúng tôi cung cấp các khoá học đúng tiêu chuẩn cũng như đúng nhu cầu của các
+							doanh nghiệp trong và ngoài nước cần.</p>
 
 						<h4><a href="tel:+84 0383067320"><i class="fas fa-phone"></i> +84 0383067320</a></h4>
-						<h4><a href="mailto:info@educationpro.com"><i class="fas fa-envelope"></i> info@educationpro.com</a></h4>
+						<h4><a href="mailto:info@educationpro.com"><i class="fas fa-envelope"></i>
+								info@educationpro.com</a></h4>
 						<h4><i class="fas fa-map-marker-alt"></i>Số 8 Nguyễn Văn Tráng, Hồ Chí Minh</h4>
-						<!-- <iFrame src="https://map.coccoc.com/map/291898860264544?borders=20.905111944444002%2C105.70787972222%2C21.112853888889%2C105.93691972222&query=s%E1%BB%91+8+nguy%E1%BB%85n+v%C4%83n+tr%C3%A1ng" width="680" height="480" >Nguyễn Văn Tráng, Hồ Chí Minh </iFrame> -->
 					</div>
-	
+
 					<div class="box-wrap">
 						<header>
 							<h1>Lớp học dự kiến </h1>
 						</header>
 						<div class="recent-course-wrap">
-							<img src="/static/images/ui-ux.jpg" alt="Ui/Ux Designing">
-							<a href=""><div class="course-name">
-								<h3>UI/UX Designer courses</h3>
-								<p><span>$50</span> $40</p>
-							</div></a>
+							<img src="data:image/png;base64,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"
+								alt="Ui/Ux Designing">
+							<a href="">
+								<div class="course-name">
+									<h3>Photoshop courses</h3>
+									<p><span>$50</span> $40</p>
+								</div>
+							</a>
 						</div>
 						<div class="recent-course-wrap">
-							<img src="/static/images/ui-ux.jpg" alt="Ui/Ux Designing">
-							<a href=""><div class="course-name">
-								<h3>UI/UX Designer courses</h3>
-								<p><span>$50</span> $40</p>
-							</div></a>
+							<img src="data:image/png;base64,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"
+								alt="Ui/Ux Designing">
+							<a href="">
+								<div class="course-name">
+									<h3>AI Designer courses</h3>
+									<p><span>$50</span> $40</p>
+								</div>
+							</a>
 						</div>
 					</div>
 
@@ -156,29 +175,7 @@
 
 				</div>
 			</div>
-			<!-- End of box-Wrap -->
-			<div class="footer-second-section">
-				<div class="container">
-					<hr class="footer-line">
-					<ul class="social-list">
-						<li><a href="mailto:ask@hoasen.edu.vn"><i class="fab fa-google-plus-g"></i></a></li>
-						<li><a href="https://www.facebook.com/iiehsu"><i class="fab fa-facebook-square"></i></a></li>
-						<li><a href="https://www.facebook.com/iiehsu"><i class="fab fa-facebook-messenger"></i></a></li>
-						<li><a href="https://www.youtube.com/watch?v=3YC3d3fl-34"><i class="fab fa-youtube"></i></a></li>
-					</ul>
-					<hr class="footer-line">
-				</div>
-			</div>
 		</footer>
-
-
-		<!-- <section class="query-section">
-			<div class="container">
-				<p>Đặt liên hệ? Hỏi chúng tôi qua số điện thoại<a href="tel:+84 0383067320"><i class="fas fa-phone"></i> +84 0383067320</a></p>
-			</div>
-		</section> -->
-		<!-- End of Query Section -->
-		<!--  -->
 	</div>
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
@@ -189,16 +186,14 @@
 	<script type="text/javascript" src="{{ url_for('static', filename='js/owl.carousel.js')}}"></script>
 	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.flexslider.js')}}"></script>
 	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.rateyo.js')}}"></script>
-	<!-- <script type="text/javascript" src="js/jquery.mmenu.all.js"></script> -->
-	<!-- <script type="text/javascript" src="js/jquery.meanmenu.min.js"></script> -->
 	<script type="text/javascript" src="{{ url_for('static', filename='js/custom.js')}}"></script>
 	<script type="text/javascript" src="{{ url_for('static', filename='js/check.js')}}"></script>
 	<script>
 		console.log('hello');
 		$.ajax({
 			url: `${location.origin}/getCourse_crm`,
-			type:'POST',
-			success:(data)=>{
+			type: 'POST',
+			success: (data) => {
 				for (const element of data) {
 					let el = `
 					<div class="grid-item design" data-category="seo">
@@ -217,14 +212,15 @@
 
 					
 					`
-					
-					$('#cGrid').append(el)
+
+					$('.box').append(el)
 				}
 			},
-			error:(err)=>{
+			error: (err) => {
 				console.log(err);
 			}
 		})
 	</script>
 </body>
+
 </html>
