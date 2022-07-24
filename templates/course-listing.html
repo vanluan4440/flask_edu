@@ -104,7 +104,7 @@
 				<div class="pagination">
 					<a href="/courselisting?page=1">&laquo;</a>
 					<a href="/courselisting?page=1">1</a>
-					<a class="active" href="/courselisting?page=2">2</a>
+					<a href="/courselisting?page=2">2</a>
 					<a href="/courselisting?page=3">3</a>
 					<a href="/courselisting?page=4">4</a>
 					<a href="/courselisting?page=5">5</a>
@@ -185,15 +185,51 @@
 	<script type="text/javascript" src="{{ url_for('static', filename='js/custom.js')}}"></script>
 	<script type="text/javascript" src="{{ url_for('static', filename='js/check.js')}}"></script>
 	<script>
-		$.ajax({
-			url: `${location.origin}/getCourse`,
+		let params = new URLSearchParams(location.search);
+        const page = params.get('page')
+		if (page == null){
+			$.ajax({
+			url: `${location.origin}/getCourse?page=1`,
 			type: 'POST',
 			success: (data) => {
 				for (const element of data) {
 					let el = `
 					<div class="grid-item design" data-category="seo">
 						<div class="img-wrap">
-							<img src="${element[2]}" alt="courses picture">
+							<img style="width:100%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-2JTMONpUkWKO3RCxmaD_HOguUi6BCXqWPA&usqp=CAU" alt="courses picture">
+						</div>
+						<div class="box-body">
+							<a href="${window.origin}/course-single?id=${element[0]}"> <p style="text-transform: capitalize; color: blue;font-size: 16px;">${element[8]}</p></a>
+							<section>
+								<p><span>Thời gian:</span> ${element[0]} months </p>
+								
+							</section>
+						</div>
+					</div>
+					
+					`
+
+					$('.box').append(el)
+				}
+			},
+			error: (err) => {
+				console.log(err);
+			}
+		}
+		
+		)
+
+		}
+		else{
+			$.ajax({
+			url: `${location.origin}/getCourse?page=${page}`,
+			type: 'POST',
+			success: (data) => {
+				for (const element of data) {
+					let el = `
+					<div class="grid-item design" data-category="seo">
+						<div class="img-wrap">
+							<img style="width:100%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-2JTMONpUkWKO3RCxmaD_HOguUi6BCXqWPA&usqp=CAU" alt="courses picture">
 						</div>
 						<div class="box-body">
 							<a href="${window.origin}/course-single?id=${element[0]}"> <p style="text-transform: capitalize; color: blue;font-size: 16px;">${element[8]}</p></a>
@@ -213,6 +249,8 @@
 				console.log(err);
 			}
 		})
+		}
+		
 	</script>
 </body>
 

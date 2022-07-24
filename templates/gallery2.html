@@ -108,14 +108,14 @@
 			<div class="container" style="display: flex;
 			justify-content: center;">
 				<div class="pagination">
-					<a href="#">&laquo;</a>
-					<a href="#">1</a>
-					<a class="active" href="#">2</a>
-					<a href="#">3</a>
-					<a href="#">4</a>
-					<a href="#">5</a>
-					<a href="#">6</a>
-					<a href="#">&raquo;</a>
+					<a href="/gallery2?page=1">&laquo;</a>
+					<a href="/gallery2?page=1">1</a>
+					<a href="/gallery2?page=2">2</a>
+					<a href="/gallery2?page=3">3</a>
+					<a href="/gallery2?page=4">4</a>
+					<a href="/gallery2?page=5">5</a>
+					<a href="/gallery2?page=6">6</a>
+					<a href="/gallery2?page=7">&raquo;</a>
 				</div>
 			</div>
 
@@ -189,16 +189,18 @@
 	<script type="text/javascript" src="{{ url_for('static', filename='js/custom.js')}}"></script>
 	<script type="text/javascript" src="{{ url_for('static', filename='js/check.js')}}"></script>
 	<script>
-		console.log('hello');
-		$.ajax({
-			url: `${location.origin}/getCourse_crm`,
+		let params = new URLSearchParams(location.search);
+        const page = params.get('page')
+		if(page==null){
+			$.ajax({
+			url: `${location.origin}/getCourse_crm?page=1`,
 			type: 'POST',
 			success: (data) => {
 				for (const element of data) {
 					let el = `
 					<div class="grid-item design" data-category="seo">
 						<div class="img-wrap">
-							<img src="${element[2]}" alt="courses picture">
+							<img style="width:100%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-2JTMONpUkWKO3RCxmaD_HOguUi6BCXqWPA&usqp=CAU" alt="courses picture">
 						</div>
 						
 						<div class="box-body">
@@ -220,6 +222,40 @@
 				console.log(err);
 			}
 		})
+
+		}
+		else{
+			$.ajax({
+			url: `${location.origin}/getCourse_crm?page=${page}`,
+			type: 'POST',
+			success: (data) => {
+				for (const element of data) {
+					let el = `
+					<div class="grid-item design" data-category="seo">
+						<div class="img-wrap">
+							<img style="width:100%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-2JTMONpUkWKO3RCxmaD_HOguUi6BCXqWPA&usqp=CAU" alt="courses picture">
+						</div>
+						
+						<div class="box-body">
+							<a href="${window.origin}/detail_gallery?id=${element[0]}" style="text-transform: capitalize; color: blue;font-size: 16px;">${element[1]}</a>
+							<section>
+								<p><span>Thời gian:</span> ${element[0]} months </p>
+							
+							</section>
+						</div>
+					</div>
+
+					
+					`
+
+					$('.box').append(el)
+				}
+			},
+			error: (err) => {
+				console.log(err);
+			}
+		})
+		}
 	</script>
 </body>
 

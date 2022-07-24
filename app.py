@@ -58,21 +58,26 @@ def detail_gallery():
 
 @app.route('/getCourse',methods=['POST'])
 def getCource():
+    page = int(request.args.get('page'))
     sql_select_Query = "select * from hsu_course ORDER BY priority DESC "
     cursor = mysql.connection.cursor()
     cursor.execute(sql_select_Query)
     records = cursor.fetchall()
     cursor.close()
-    return jsonify(list(records))
+    return jsonify(list(records)[page:page+6])
+
+
+
 
 @app.route('/getCourse_crm',methods=['POST'])
 def getCource_crm():
+    page = int(request.args.get('page'))
     sql_select_Query = "select * from crm_course "
     cursor = mysql.connection.cursor()
     cursor.execute(sql_select_Query)
     records = cursor.fetchall()
     cursor.close()
-    return jsonify(list(records)[0:60])
+    return jsonify(list(records)[page:page+10])
     
 
 @app.route('/login_form', methods=['POST'])
